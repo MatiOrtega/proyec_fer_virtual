@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-sm  justify-content-center">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Feria</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Registrate</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="Emprendedores/em.component.html">Emprendedores</a>
+    </li>
+    <div class="navbar-cart" (click)="onToggleCart()">
+      <div class="navbar-cart-items" *ngIf="(myCart$ | async)?.length">
+        <p>{{ (myCart$ | async)?.length }}</p>
+      </div>
+      <i class="fa-solid fa-cart-shopping"></i>
+    </div>
+  </ul>
+</nav>
+<div class="cart" [ngClass]="{ show: viewCart }">
+  <app-cart></app-cart>
+</div>
